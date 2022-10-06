@@ -13,7 +13,7 @@ plugins {
 }
 
 task printName {
-    println "Hello " + customName
+    println "Hello " + paramName
 }
 repositories {
     // Use jcenter for resolving your dependencies.
