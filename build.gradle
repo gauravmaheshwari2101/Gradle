@@ -31,3 +31,17 @@ dependencies {
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
 }
+publishing {
+    publications {
+    }
+    repositories {
+        maven {
+            name = "HelloRepo" // target repository name
+            url = "http://my.org.server/repo/url"
+            credentials {
+                username = 'gaurav'
+                password = 'Gau****12'
+            }
+        }
+    }
+}
