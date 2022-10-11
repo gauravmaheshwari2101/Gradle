@@ -5,6 +5,7 @@ GIT_URL=https://github.com/gauravmaheshwari2101/Gradle.git
 GIT_LOGFILE=gitlog_$(date +'%d%m%Y')
 
 # Define Functions
+
 #To check whether Directory already exists or not .
 checkdir(){
 if [ -d "Gradle" ] 
@@ -15,8 +16,8 @@ else
     echo "Directory does not exist so cloning new directory"
     gitclone
 fi
-
 }
+
 #for cloning the repository
 gitclone(){
         git clone ${GIT_URL}

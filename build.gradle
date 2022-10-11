@@ -16,9 +16,8 @@ task printName {
     println "Hello " + paramName
 }
 repositories {
-    // Use jcenter for resolving your dependencies.
-    // You can declare any Maven/Ivy/file repository here.
-    jcenter()
+   // Use Maven Central for resolving dependencies.
+    mavenCentral()
 }
 
 dependencies {
@@ -31,16 +30,24 @@ dependencies {
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
 }
+
+version= '0.0.1'
+apply plugin: 'maven-publish'
 publishing {
     publications {
+        maven(MavenPublication) {
+           artifact(“build/libs/Hello-$version”+”.jar”) {
+             extension ‘jar’
+            }
+         }
     }
     repositories {
         maven {
-            name = "HelloRepo" // target repository name
-            url = "http://my.org.server/repo/url"
+            name = "Hello" // target repository name
+            url = "http://localhost:8081/repository/maven-releases/"
             credentials {
-                username = 'gaurav'
-                password = 'Gau****12'
+                username project.repoUser
+                password project.repoPassword
             }
         }
     }
